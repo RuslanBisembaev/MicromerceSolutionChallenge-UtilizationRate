@@ -61,6 +61,7 @@ type WorkforceUtilisation = {
   utilisationRatePreviousQuarter?: string;
   _definitionId: string;
   lastThreeMonthsIndividually?: LastThreeMonthsIndividually[];
+  quarterEarnings?: QuarterEarnings[];
 };
 
 type Employee = {
@@ -130,9 +131,7 @@ export type SourceDataType = {
 export type TableDataType = {
   person: string;
   past12Months: string;
-  y2d: string;
-  may: string;
-  june: string;
-  july: string;
+// Allow dynamic access for month names (e.g., row["August"])
+  [key: string]: string;
   netEarningsPrevMonth: string;
 };
